@@ -1,0 +1,14 @@
+algoritmo somaInteiro;
+
+principal
+	inteiro numero, sucessor, antecessor;
+
+	escreval ("Digite um numero:");
+	leia(numero);
+	 antecessor = numero-1;
+	 sucessor= numero+1;
+
+	escreval("A soma do triplo do numero com seu sucessor e: " + ((numero*3)+ sucessor));
+	escreval("A soma do dobro do numero com seu antecessor e: " + ((numero*2)+ antecessor));
+	
+fimPrincipal

@@ -1,0 +1,87 @@
+algoritmo menuProfessor;
+
+principal
+	inteiro totalAlunos ,  contadorNotaAlunos;
+	real nota, maiorNota, menorNota;
+	inteiro opcao;
+	
+	   
+		
+		 faca
+		escreval("Digite as notas finais de todos os alunos");
+		leia(nota);
+		leia(totalAlunos);
+	    totalAlunos = totalAlunos + 1;
+	    
+	    imprimeMenuEscolha();
+			escolha (opcao)
+				caso 1 
+				escreval("O total de alunos na sua turma é: " +totalAlunos);
+				interrompa;
+				caso 2 
+				escreval("O total de alunos aprovados é: " +aprovados);
+				interrompa;
+				caso 3 
+				escreval("O total de alunos reprovados é: " +reprovados);
+				interrompa;
+				caso 4 
+				escreval("A maior notaAluno na sua turma é: " +maiorNota);
+				interrompa;
+				caso 5 
+				escreval("A menor notaAluno na sua turma é: " +menorNota);
+				interrompa;
+				caso 6 
+				interrompa;
+				
+			fimEscolha
+		enquanto (nota >0);
+		
+		escreval("FIM");
+	
+		
+fimPrincipal
+
+ procedimento imprimeMenuEscolha()
+ escreval("Escolha uma das opções do menu:");
+			
+			escreval("1- Total de Alunos");
+			escreval("2- Quantidade de Aprovados");
+			escreval("3- Quantidade de Reprovados");
+			escreval("4- Maior notaAluno");
+			escreval("5- Menor notaAluno");
+			escreval("6- Sair");
+ 
+ fimProcedimento
+
+ funcao real leiaNota (real nota)
+
+	faca
+		escreval("Digite as notas finais de todos os alunos");
+		leia(nota);
+	enquanto (nota > 0 );
+ 
+ 
+ fimFuncao
+
+ funcao real maiorNota (real contadorNotAlunos, real totalAlunos, real nota)
+
+ 
+ 
+ 			para(contadorNotaAlunos de 1 ate totalAlunos passo 1) faca
+				nota = maiorNota;
+				se (nota > maiorNota) entao
+					nota = menorNota;
+				fimSe
+			fimPara
+		retorna maiorNota;
+		
+ fimFuncao
+
+ funcao real alunosAprovados (real nota)
+ 
+ 			se (nota >= 5) entao
+				aprovados = aprovados + 1;
+				senao reprovados = reprovados + 1;
+			fimSe
+ retorna aprovados;
+ fimFuncao

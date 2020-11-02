@@ -1,0 +1,18 @@
+algoritmo porcentagem;
+
+principal
+	inteiro premioTotal, ganhador1, ganhador2, ganhador3;
+	
+	
+	
+	escreval("Digite o valor do premio total:");
+	leia(premioTotal);
+	ganhador1= premioTotal*0.46;
+	ganhador2= premioTotal*0.32;
+	ganhador3= premioTotal - (ganhador1 + ganhador2);
+	
+	escreval ("Premio do ganhador 1: " + ganhador1);
+	escreval ("Premio do ganhador 2: " + ganhador2);
+	escreval ("Premio do ganhador 3: " + ganhador3);
+
+fimPrincipal

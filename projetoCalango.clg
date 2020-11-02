@@ -1,0 +1,215 @@
+algoritmo projetoCalango;
+// Síntese
+//  Objetivo: mostrar os dados dos alunos ao professor usuário
+//  Entrada : dados de nome, idade , nota e matricula dos alunos
+//  Saída   : ralotórios e listas
+
+
+principal
+	// Declarações
+	//quantidade de alunos N
+	inteiro N;
+	inteiro aprovados, reprovados;
+	real nota, maior_nota,menor_nota;
+
+	aprovados=  0;
+	reprovados= 0;
+	maior_nota= 0;
+	menor_nota= 11;
+
+	escreval("Informe a quantidade de alunos");
+	leia(N);
+
+		enquanto(N =! 0) faca
+			escreval("Informe a quantidade de alunos");
+			leia(N);
+
+			inteiro i;
+			inteiro idade[N];
+			real nota[N];
+			texto nome[N];
+			texto matricula[N];
+
+			nome[N] = recebe_nome(nome[N]);
+			matricula[N] = recebe_matricula(matricula[N]);		
+			nota[N] = recebe_nota(nota[N]);
+
+			para (i de 0 ate N)faca
+				leia(nota[i]);
+				se(nota[i]>=0)entao
+					se(nota[i]>maior_nota)entao
+						maior_nota = nota[i];
+					fimSe
+				fimSe
+
+				se(nota[i]< menor_nota)entao
+					menor_nota= nota[i];
+				fimSe
+
+				se (nota[i] > 5)entao
+						aprovados = aprovados +1;
+					senao 
+						reprovados = reprovados +1;
+				fimSe	
+				
+			fimPara
+
+			
+			
+
+		fimEnquanto
+	
+	
+
+	// Instruções
+
+fimPrincipal
+// funcoes para ler e imprimir idades
+
+funcao inteiro recebe_idade (inteiro idades[])
+		inteiro i;
+		inteiro N;
+	
+		escreval("Informe a quantidade de alunos:");
+		leia(N);
+		
+		para(i de 0 ate N passo 1 ) faca
+			 escreval("Digite a idade do aluno");
+			 leia(idades[i]);
+			 	enquanto (idades[i] < 0)faca
+			 		escreval("Valor inválido! Digite uma idade com valor inteiro positivo");
+			 		leia(idades[i]);
+			 	fimEnquanto
+		fimPara
+	retorna idades[];
+fimFuncao
+
+funcao inteiro imprime_idade(inteiro idades[])
+		inteiro i;
+		inteiro N;
+		
+		escreval("Informe a quantidade de alunos:");
+		leia(N);
+		para (i de 0 ate N passo 1)faca
+			escreval("As idades dos alunos são :" + idades[i]);
+		fimPara
+	retorna idades[];
+fimFuncao
+
+//funcoes para ler e imprimir as notas
+
+funcao real recebe_nota (real notas[])
+		inteiro i;
+		inteiro N;
+	
+		escreval("Informe a quantidade de alunos:");
+		leia(N);
+		
+		para(i de 0 ate N passo 1 ) faca
+			 escreval("Digite a nota do aluno");
+			 leia(notas[i]);
+			 	enquanto (notas[i] < 0 ou notas[i]>10 )faca
+			 		escreval("Valor inválido! Digite um valor e 0 a 10");
+			 		leia(notas[i]);
+			 	fimEnquanto
+		fimPara
+	retorna notas[];	
+fimFuncao
+
+funcao real imprime_nota (real notas[])
+		inteiro i;
+		inteiro N;
+		
+		escreval("Informe a quantidade de alunos:");
+		leia(N);
+		para (i de 0 ate N passo 1)faca
+			escreval("A nota do aluno é :" + notas[i]);
+		fimPara	
+	retorna notas[];	
+fimFuncao
+
+// funcoes para ler e imprimir as matriculas
+
+
+funcao texto recebe_matricula (texto matriculas[])
+		inteiro i;
+		inteiro N;
+	
+		escreval("Informe a quantidade de alunos:");
+		leia(N);
+		
+		para(i de 0 ate N passo 1 ) faca
+			 escreval("Digite a matricula do aluno");
+			 leia(matriculas[i]);
+			 	enquanto (tamanhoTexto(matriculas[i]) =! 10 )faca
+			 		escreval("Valor inválido! Digite um valor no formato 00/0000000");
+			 		leia(matriculas[i]);
+			 	fimEnquanto
+		fimPara
+	retorna matriculas[];	
+fimFuncao
+
+funcao texto imprime_matriculas (texto matriculas[])
+		inteiro i;
+		inteiro N;
+		
+		escreval("Informe a quantidade de alunos:");
+		leia(N);
+		para (i de 0 ate N passo 1)faca
+			escreval("A matricula do aluno é:" + matriculas[i]);
+		fimPara
+	retorna matriculas[];	
+fimFuncao
+
+// funcoes para ler, imprimir e buscar os nomes dos alunos
+
+funcao texto recebe_nome (texto nomes[])
+		inteiro i;
+		inteiro N;
+	
+		escreval("Informe a quantidade de alunos:");
+		leia(N);
+		
+		para(i de 0 ate N passo 1 ) faca
+			 escreval("Digite o nome do aluno");
+			 leia(nomes[i]);
+		fimPara
+	retorna nomes[];
+fimFuncao
+
+funcao texto imprime_nome (texto nomes[])
+		inteiro i;
+		inteiro N;
+		
+		escreval("Informe a quantidade de alunos:");
+		leia(N);
+		para (i de 0 ate N passo 1)faca
+			escreval("O nome do alunos é :" + nomes[i]);
+		fimPara
+	retorna nomes[];
+fimFuncao
+
+funcao texto busca_aluno (texto nome, texto nomes[])
+
+	inteiro i;
+	inteiro N;
+
+	escreval("Informe a quantidade de alunos:");
+	leia(N);
+	nomes[N]= recebe_nome(nomes[N]);
+
+	escreval("Informe o nome do aluno que você deseja buscar");
+		leia(nome);
+	para (i de 0 ate N passo 1) faca
+		leia(nomes[i]);
+			se (comparaTexto(nomes[i], nomes) == 0) entao
+				escreval("Os dados do aluno são" + imprime_nome(nomes[i]) + " - " + imprime_matricula(matriculas[i]) + " - " + imprima_nota(notas[i]));
+			fimSe
+	fimPara
+	
+		
+fimFuncao
+
+
+
+

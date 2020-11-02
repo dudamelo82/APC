@@ -1,0 +1,16 @@
+algoritmo encanador;
+
+
+
+principal
+	inteiro valorDia, valorLiquido,valorBruto,diasTrabalhados;
+	valorDia=30;
+	
+	escreval("Informe quantos dias o encanador trabalhou: ");
+	leia(diasTrabalhados);
+	valorBruto= (diasTrabalhados*valorDia);
+	valorLiquido = valorBruto - (valorBruto*0.08);
+	escreval("O valor recebido foi pelo encanador foi :" + valorLiquido);
+	
+
+fimPrincipal
